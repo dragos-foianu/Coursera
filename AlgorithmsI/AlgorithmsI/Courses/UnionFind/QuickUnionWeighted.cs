@@ -6,7 +6,7 @@ namespace AlgorithmsI.Courses.UnionFind
     /**
      * Operations:
      *  Initialize:     O(n)
-     *  Union:          O(logn)
+     *  Union:          O(log*n)
      *  Find:           O(logn)
      */
     public class QuickUnionWeighted
@@ -56,6 +56,11 @@ namespace AlgorithmsI.Courses.UnionFind
         {
             while (i != components[i])
             {
+                /* Before moving the root, move to the grandparent.
+                 * This halves the tree size.
+                 * An additional optimization is flattening the tree completely.
+                 */
+                components[i] = components[components[i]];
                 i = components[i];
             }
             return i;
