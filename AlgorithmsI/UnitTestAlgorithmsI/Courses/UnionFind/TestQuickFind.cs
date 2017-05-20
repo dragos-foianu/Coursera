@@ -18,40 +18,44 @@ namespace UnitTestAlgorithmsI
         [TestMethod]
         public void QuickFind_Union()
         {
-            QuickFind qf = new QuickFind(10);
+            QuickFind qf = new QuickFind(100);
             List<int> components;
 
             /* Test union of two nodes */
             qf.Union(0, 1);
             components = qf.Components;
             Assert.AreEqual(components[0], components[1]);
-            Assert.AreEqual(CountConnectedComponents(components), 9);
+            Assert.AreEqual(CountConnectedComponents(components), components.Count - 1);
 
             /* Test union of three nodes */
             qf.Union(1, 2);
             components = qf.Components;
             Assert.AreEqual(components[0], components[1]);
             Assert.AreEqual(components[1], components[2]);
-            Assert.AreEqual(CountConnectedComponents(components), 8);
+            Assert.AreEqual(CountConnectedComponents(components), components.Count - 2);
 
-            /* Test union of all nodes */
-            for (int i = 3; i < components.Count; i++)
+            /* Test random unions */
+            Random random = new Random();
+            List<Tuple<int, int>> connections = new List<Tuple<int, int>>();
+            for (int i = 0; i < components.Count; i++)
             {
-                qf.Union(i - 1, i);
+                int p = random.Next(0, components.Count);
+                int q = random.Next(0, components.Count);
+                connections.Add(new Tuple<int, int>(p, q));
+                qf.Union(p, q);
             }
 
             components = qf.Components;
-            for (int i = 1; i < components.Count; i++)
+            foreach (var con in connections)
             {
-                Assert.AreEqual(components[i - 1], components[i]);
+                Assert.AreEqual(components[con.Item1], components[con.Item2]);
             }
-            Assert.AreEqual(CountConnectedComponents(components), 1);
         }
 
         [TestMethod]
         public void QuickFind_Find()
         {
-            QuickFind qf = new QuickFind(10);
+            QuickFind qf = new QuickFind(100);
             bool result;
 
             /* Initially, I find no path */

@@ -22,7 +22,7 @@ namespace AlgorithmsI.Courses.UnionFind
         public QuickUnionWeighted(int n)
         {
             components = Enumerable.Range(0, n).ToList();
-            size = Enumerable.Repeat(0, n).ToList();
+            size = Enumerable.Repeat(1, n).ToList();
         }
 
         public void Union(int p, int q)
