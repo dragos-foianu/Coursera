@@ -6,28 +6,42 @@ namespace AlgorithmsI.Courses.UnionFind
     /**
      * Operations:
      *  Initialize:     O(n)
-     *  Union:          O(n)
-     *  Find:           O(n)
+     *  Union:          O(logn)
+     *  Find:           O(logn)
      */
-    public class QuickUnion
+    public class QuickUnionWeighted
     {
         private List<int> components;
+        private List<int> size;
 
         /**
          * Provides a copy of the internal connected components list.
          */
         public List<int> Components { get { return new List<int>(components); } }
 
-        public QuickUnion(int n)
+        public QuickUnionWeighted(int n)
         {
             components = Enumerable.Range(0, n).ToList();
+            size = Enumerable.Repeat(0, n).ToList();
         }
 
         public void Union(int p, int q)
         {
             int rp = Root(p);
             int rq = Root(q);
-            components[rp] = rq;
+            if (rp == rq) return;
+
+            /* pick the smaller tree and set the root of the larger tree to it */
+            if (size[rp] < size[rq])
+            {
+                components[rp] = rq;
+                size[rq] += size[rp];
+            }
+            else
+            {
+                components[rq] = rp;
+                size[rp] += size[rq];
+            }
         }
 
         public bool Find(int p, int q)

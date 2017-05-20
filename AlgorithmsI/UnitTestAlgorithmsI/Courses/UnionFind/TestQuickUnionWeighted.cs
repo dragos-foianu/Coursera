@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace UnitTestAlgorithmsI
 {
     [TestClass]
-    public class TestQuickUnion
+    public class TestQuickUnionWeighted
     {
         private int CountConnectedComponents(List<int> components)
         {
@@ -25,7 +25,7 @@ namespace UnitTestAlgorithmsI
         }
 
         [TestMethod]
-        public void QuickUnion_Union()
+        public void QuickUnionWeighted_Union()
         {
             QuickUnion qf = new QuickUnion(10);
             List<int> components;
@@ -58,7 +58,7 @@ namespace UnitTestAlgorithmsI
         }
 
         [TestMethod]
-        public void QuickUnion_Find()
+        public void QuickUnionWeighted_Find()
         {
             QuickUnion qf = new QuickUnion(10);
             bool result;
