@@ -10,7 +10,7 @@ namespace AlgorithmsI.Courses.UnionFind
      * Operations:
      *  Initialize:     O(n)
      *  Union:          O(n)
-     *  Find:           O(1)
+     *  Find:           O(n)
      */
     public class QuickUnion
     {
