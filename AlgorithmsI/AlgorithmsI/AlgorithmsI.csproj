@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Courses\Sort\MergeSort.cs" />
     <Compile Include="Courses\UnionFind\QuickFind.cs" />
     <Compile Include="Courses\UnionFind\QuickUnion.cs" />
     <Compile Include="Courses\UnionFind\QuickUnionWeighted.cs" />
