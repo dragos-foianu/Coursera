@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgorithmsI.Courses.Sort
 {
-    public interface SortingAlgorithm
+    public interface ISortingAlgorithm
     {
         /**
          * Sorts an array of IComparable.

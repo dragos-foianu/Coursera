@@ -39,27 +39,19 @@ namespace UnitTestAlgorithmsI
         }
 
         [TestMethod]
-        public void MergeSort_EmptyList()
+        public void TestMergeSort()
         {
-            TestEmptyList(new MergeSort());
+            MergeSort ms = new MergeSort();
+            TestEmptyList(ms);
+            TestRandomInts(ms);
         }
 
         [TestMethod]
-        public void MergeSort_RandomInts()
+        public void TestBottomUpMergeSort()
         {
-            TestRandomInts(new MergeSort());
-        }
-
-        [TestMethod]
-        public void BottomUpMergeSort_EmptyList()
-        {
-            TestEmptyList(new BottomUpMergeSort());
-        }
-
-        [TestMethod]
-        public void BottomUpMergeSort_RandomInts()
-        {
-            TestRandomInts(new BottomUpMergeSort());
+            BottomUpMergeSort ms = new BottomUpMergeSort();
+            TestEmptyList(ms);
+            TestRandomInts(ms);
         }
     }
 }

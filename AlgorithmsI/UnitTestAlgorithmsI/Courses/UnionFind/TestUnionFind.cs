@@ -96,39 +96,24 @@ namespace UnitTestAlgorithmsI.Courses.UnionFind
         }
 
         [TestMethod]
-        public void QuickFind_Union()
+        public void TestQuickFind()
         {
             TestUnion(new QuickFind(100));
+            TestFind(new QuickFind(100));
         }
 
         [TestMethod]
-        public void QuickUnion_Union()
+        public void TestQuickUnion()
         {
-            TestUnion(new QuickFind(100));
+            TestUnion(new QuickUnion(100));
+            TestFind(new QuickUnion(100));
         }
 
         [TestMethod]
-        public void QuickUnionWeighted_Union()
+        public void TestQuickUnionWeighted()
         {
-            TestUnion(new QuickFind(100));
-        }
-
-        [TestMethod]
-        public void QuickFind_Find()
-        {
-            TestUnion(new QuickFind(100));
-        }
-
-        [TestMethod]
-        public void QuickUnion_Find()
-        {
-            TestUnion(new QuickFind(100));
-        }
-
-        [TestMethod]
-        public void QuickUnionWeighted_Find()
-        {
-            TestUnion(new QuickFind(100));
+            TestUnion(new QuickUnionWeighted(100));
+            TestFind(new QuickUnionWeighted(100));
         }
     }
 }

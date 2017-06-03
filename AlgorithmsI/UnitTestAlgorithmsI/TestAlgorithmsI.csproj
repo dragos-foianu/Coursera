@@ -48,8 +48,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Courses\Sort\TestBottomUpMergeSort.cs" />
-    <Compile Include="Courses\Sort\TestMergeSort.cs" />
+    <Compile Include="Courses\Sort\TestSortingAlgorithm.cs" />
     <Compile Include="Courses\UnionFind\TestUnionFind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

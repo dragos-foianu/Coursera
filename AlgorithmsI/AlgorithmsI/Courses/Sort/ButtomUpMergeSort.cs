@@ -12,7 +12,7 @@ namespace AlgorithmsI.Courses.Sort
     *  Sort:      O(logn)
     *  Total:     O(nlogn)
     */
-    public class BottomUpMergeSort : SortingAlgorithm
+    public class BottomUpMergeSort : ISortingAlgorithm
     {
         private void Merge(ref IComparable[] a, ref IComparable[] aux, int lo, int mid, int hi)
         {
