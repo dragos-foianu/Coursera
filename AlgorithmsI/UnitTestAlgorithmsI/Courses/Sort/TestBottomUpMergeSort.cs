@@ -9,32 +9,32 @@ using AlgorithmsI.Courses.Sort;
 namespace UnitTestAlgorithmsI
 {
     [TestClass]
-    public class TestMergeSort
+    public class TestBottomUpMergeSort
     {
         private Random rnd;
         private SortingAlgorithm sort;
 
         [TestInitialize]
-        public void MergeSort_Init()
+        public void BottomUpMergeSort_Init()
         {
             rnd = new Random();
-            sort = new MergeSort();
+            sort = new BottomUpMergeSort();
         }
 
         [TestMethod]
-        public void MergeSort_EmptyList()
+        public void BottomUpMergeSort_EmptyList()
         {
             IComparable[] a = new IComparable[0];
             sort.Sort(ref a);
         }
 
         [TestMethod]
-        public void MergeSort_RandomInts()
+        public void BottomUpMergeSort_RandomInts()
         {
             /* Randomize numbers 0..49 */
             IComparable[] a = Enumerable.Range(0, 50).OrderBy(r => rnd.Next()).Select(x => x as IComparable).ToArray();
             sort.Sort(ref a);
-            
+
             /* Make sure they are sorted */
             for (int i = 1; i < a.Length; i++)
             {

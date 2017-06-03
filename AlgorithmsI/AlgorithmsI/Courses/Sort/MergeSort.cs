@@ -12,9 +12,9 @@ namespace AlgorithmsI.Courses.Sort
     *  Sort:      O(logn)
     *  Total:     O(nlogn)
     */
-    public class MergeSort
+    public class MergeSort : SortingAlgorithm
     {
-        private static void Merge(ref IComparable[] a, ref IComparable[] aux, int lo, int mid, int hi)
+        private void Merge(ref IComparable[] a, ref IComparable[] aux, int lo, int mid, int hi)
         {
             int i = lo;
             int j = mid + 1;
@@ -36,7 +36,7 @@ namespace AlgorithmsI.Courses.Sort
             }
         }
 
-        private static void Sort(ref IComparable[] a, ref IComparable[] aux, int lo, int hi)
+        private void Sort(ref IComparable[] a, ref IComparable[] aux, int lo, int hi)
         {
             if (hi <= lo) return;
             int mid = lo + (hi - lo) / 2;
@@ -45,7 +45,7 @@ namespace AlgorithmsI.Courses.Sort
             Merge(ref a, ref aux, lo, mid, hi);
         }
 
-        public static void Sort(ref IComparable[] a)
+        public void Sort(ref IComparable[] a)
         {
             IComparable[] aux = new IComparable[a.Length];
             Sort(ref a, ref aux, 0, a.Length - 1);
