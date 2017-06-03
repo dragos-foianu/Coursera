@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Courses\Sort\ButtomUpMergeSort.cs" />
+    <Compile Include="Courses\Sort\InsertionSort.cs" />
     <Compile Include="Courses\Sort\SelectionSort.cs" />
     <Compile Include="Courses\Sort\ISortingAlgorithm.cs" />
     <Compile Include="Courses\Sort\MergeSort.cs" />

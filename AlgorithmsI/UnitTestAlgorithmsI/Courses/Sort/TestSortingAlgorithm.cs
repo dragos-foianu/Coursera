@@ -61,5 +61,13 @@ namespace UnitTestAlgorithmsI
             TestEmptyList(ss);
             TestRandomInts(ss);
         }
+
+        [TestMethod]
+        public void TestInsertionSort()
+        {
+            InsertionSort _is = new InsertionSort();
+            TestEmptyList(_is);
+            TestRandomInts(_is);
+        }
     }
 }
