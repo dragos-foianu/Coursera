@@ -69,5 +69,13 @@ namespace UnitTestAlgorithmsI
             TestEmptyList(_is);
             TestRandomInts(_is);
         }
+
+        [TestMethod]
+        public void TestShellSort()
+        {
+            ShellSort ss = new ShellSort();
+            TestEmptyList(ss);
+            TestRandomInts(ss);
+        }
     }
 }
