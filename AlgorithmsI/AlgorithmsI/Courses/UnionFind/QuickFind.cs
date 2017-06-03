@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace AlgorithmsI.Courses.UnionFind
 {
-    public class QuickFind : UnionFind
+    public class QuickFind : IUnionFind
     {
         private List<int> components;
 
-        /**
-         * Provides a copy of the internal connected components list.
-         */
-        public List<int> Components { get { return new List<int>(components); } }
+        public List<int> Components()
+        {
+            return new List<int>(components);
+        }
 
         public QuickFind(int n)
         {

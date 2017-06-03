@@ -48,7 +48,7 @@
     <Compile Include="Courses\UnionFind\QuickFind.cs" />
     <Compile Include="Courses\UnionFind\QuickUnion.cs" />
     <Compile Include="Courses\UnionFind\QuickUnionWeighted.cs" />
-    <Compile Include="Courses\UnionFind\UnionFind.cs" />
+    <Compile Include="Courses\UnionFind\IUnionFind.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

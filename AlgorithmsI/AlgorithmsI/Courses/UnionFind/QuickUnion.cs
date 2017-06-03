@@ -13,10 +13,10 @@ namespace AlgorithmsI.Courses.UnionFind
     {
         private List<int> components;
 
-        /**
-         * Provides a copy of the internal connected components list.
-         */
-        public List<int> Components { get { return new List<int>(components); } }
+        public List<int> Components()
+        {
+            return new List<int>(components);
+        }
 
         public QuickUnion(int n)
         {

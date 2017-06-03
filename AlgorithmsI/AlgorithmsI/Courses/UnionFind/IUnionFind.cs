@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace AlgorithmsI.Courses.UnionFind
 {
-    public interface UnionFind
+    public interface IUnionFind
     {
+        /**
+        * Provides a copy of the internal connected components list.
+        */
+        List<int> Components();
+
         /**
          * Connects two nodes.
          */
