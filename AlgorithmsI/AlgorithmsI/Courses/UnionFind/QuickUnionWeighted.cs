@@ -9,14 +9,14 @@ namespace AlgorithmsI.Courses.UnionFind
      *  Union:          O(log*n)
      *  Find:           O(logn)
      */
-    public class QuickUnionWeighted
+    public class QuickUnionWeighted : IUnionFind
     {
         private List<int> components;
         private List<int> size;
 
         public List<int> Components()
         {
-            return new List<int>(components);
+            return components.Select(x => Root(x)).ToList();
         }
 
         public QuickUnionWeighted(int n)
@@ -60,7 +60,9 @@ namespace AlgorithmsI.Courses.UnionFind
                  * This halves the tree size.
                  * An additional optimization is flattening the tree completely.
                  */
-                components[i] = components[components[i]];
+                // This invalidates the list returned by Components.
+                // It does more than just provide the root.
+                // components[i] = components[components[i]];
                 i = components[i];
             }
             return i;

@@ -9,13 +9,13 @@ namespace AlgorithmsI.Courses.UnionFind
      *  Union:          O(n)
      *  Find:           O(n)
      */
-    public class QuickUnion
+    public class QuickUnion : IUnionFind
     {
         private List<int> components;
 
         public List<int> Components()
         {
-            return new List<int>(components);
+            return components.Select(x => Root(x)).ToList();
         }
 
         public QuickUnion(int n)
