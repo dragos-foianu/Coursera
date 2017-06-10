@@ -53,8 +53,8 @@ namespace UnitTestAlgorithmsI.Courses.Heap
             a.CopyTo(sorted, 0);
             Array.Sort(sorted);
 
-            IComparable expectedRoot = sorted[sorted.Length - 1];
-            IComparable expectedNext = sorted[sorted.Length - 2];
+            IComparable expectedRoot = sorted[0];
+            IComparable expectedNext = sorted[1];
 
             for (int i = 0; i < a.Length; i++)
                 bh.Insert(a[i]);
@@ -85,6 +85,16 @@ namespace UnitTestAlgorithmsI.Courses.Heap
 
             mbh = new MaxBinaryHeap();
             TestRemove(mbh, HeapType.MAX_HEAP);
+        }
+
+        [TestMethod]
+        public void TestMinBinaryHeap()
+        {
+            MinBinaryHeap mbh = new MinBinaryHeap();
+            TestInsert(mbh, HeapType.MIN_HEAP);
+
+            mbh = new MinBinaryHeap();
+            TestRemove(mbh, HeapType.MIN_HEAP);
         }
     }
 }

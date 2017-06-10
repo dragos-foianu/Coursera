@@ -44,9 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Courses\Heap\BinaryHeap.cs" />
+    <Compile Include="Courses\Heap\MinBinaryHeap.cs" />
     <Compile Include="Courses\Heap\MaxBinaryHeap.cs" />
     <Compile Include="Courses\Other\KnuthShuffle.cs" />
-    <Compile Include="Courses\Heap\PriorityQueue.cs" />
     <Compile Include="Courses\Sort\ButtomUpMergeSort.cs" />
     <Compile Include="Courses\Sort\ShellSort.cs" />
     <Compile Include="Courses\Sort\InsertionSort.cs" />
