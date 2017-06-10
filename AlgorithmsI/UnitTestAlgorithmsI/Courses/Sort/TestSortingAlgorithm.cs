@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AlgorithmsI.Courses.UnionFind;
-using System.Collections.Generic;
 
 using AlgorithmsI.Courses.Sort;
 
