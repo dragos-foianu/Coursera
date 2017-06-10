@@ -53,14 +53,26 @@ namespace UnitTestAlgorithmsI.Courses.Heap
             a.CopyTo(sorted, 0);
             Array.Sort(sorted);
 
-            IComparable expectedRoot = sorted[0];
-            IComparable expectedNext = sorted[1];
+            IComparable expectedRoot = null;
+            IComparable expectedNext = null;
+            if (ht == HeapType.MAX_HEAP)
+            {
+                expectedRoot = sorted[a.Length - 1];
+                expectedNext = sorted[a.Length - 2];
+            }
+            else if (ht == HeapType.MIN_HEAP)
+            {
+                expectedRoot = sorted[0];
+                expectedNext = sorted[1];
+            }
 
             for (int i = 0; i < a.Length; i++)
                 bh.Insert(a[i]);
 
-            Assert.AreEqual(0, bh.Delete().CompareTo(expectedRoot));
-            Assert.AreEqual(0, bh.Delete().CompareTo(expectedNext));
+            IComparable root = bh.Delete();
+            IComparable next = bh.Delete();
+            Assert.AreEqual(0, root.CompareTo(expectedRoot));
+            Assert.AreEqual(0, next.CompareTo(expectedNext));
 
             for (int i = 0; i < a.Length - 2; i++)
                 bh.Delete();

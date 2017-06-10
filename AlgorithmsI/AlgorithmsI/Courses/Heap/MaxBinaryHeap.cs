@@ -66,10 +66,12 @@ namespace AlgorithmsI.Courses.Heap
         private void Swim()
         {
             int index = size - 1;
-            while (heap[index].CompareTo(heap[index / 2]) > 0)
+            while (index != 0 && (index - 1) / 2 >= 0)
             {
-                Swap(index, index / 2);
-                index = index / 2;
+                int parent = (index - 1) / 2;
+                if (heap[index].CompareTo(heap[parent]) > 0)
+                Swap(index, parent);
+                index = parent;
             }
         }
 
@@ -79,15 +81,16 @@ namespace AlgorithmsI.Courses.Heap
             while (2 * index + 1 < size)
             {
                 int left = 2 * index + 1;
-                int right = 2 * index + 2;
 
                 int larger = left;
-                if (right < size && heap[right].CompareTo(heap[right]) > 0)
-                    larger = right;
+                if (2 * index + 2 < size)
+                {
+                    int right = 2 * index + 2;
+                    if (heap[right].CompareTo(heap[left]) > 0)
+                        larger = right;
+                }
 
-                if (heap[index].CompareTo(heap[larger]) > 0)
-                    break;
-                else
+                if (heap[index].CompareTo(heap[larger]) < 0)
                     Swap(index, larger);
                 index = larger;
             }
